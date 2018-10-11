@@ -8,7 +8,7 @@ def scrap_deputys(page)
 
     hash_deputys = Hash.new
     deputys.each do |deputy|
-        #Build deputy url and put it in a hash 
+        #Build deputy url and put it in a hash
         hash_deputys[deputy.text] = "http://www2.assemblee-nationale.fr" + deputy['href']
     end
     return hash_deputys
@@ -21,8 +21,8 @@ def scrap_email(page)
     #Select the <a> wich cointain deputy's email :
     email = ""
     deputy_as.each do |a|
-        if a['href'].include?("mailto")
-            email=a['href'].delete "mailto:" 
+        if a['href'].include?("mailto:")
+            email=a['href'].delete "mailto:"
         end
     end
     return email
@@ -51,4 +51,3 @@ end
 
 
 perform
-
